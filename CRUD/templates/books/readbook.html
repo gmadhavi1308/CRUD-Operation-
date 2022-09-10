@@ -1,0 +1,27 @@
+{% extends 'books/base.html'%}
+{%block title %} Book Details {% endblock %}
+{%block body %}
+  {% if row %}
+  <h4 align="center">{{row.id}} Book Details</h4>
+  <table border="1" align="center" cellpadding='10'>
+
+    <tr>
+      <th align='right'> Title </th>
+      <td> {{row.Title}} </td>
+    </tr>
+    <tr>
+      <th align='right'> Author </th>
+      <td> {{row.Author}} </td>
+    </tr>
+    <tr>
+          <th align='right'> Edition </th>
+          <td> {{row.Edition}} </td>
+        </tr>
+        <tr>
+          <th align='right'> Price </th>
+          <td> {{row.Price}} </td>
+        </tr>
+        {% else %}
+        <h4 align="center"> Book not found...</h4>
+      {% endif %}
+    {% endblock %}

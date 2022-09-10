@@ -1,0 +1,15 @@
+{% extends 'books/base.html'%}
+{%block title %} SearchBook {% endblock %}
+{% block body %}
+<form method ="post">
+  {% csrf_token %}
+  <h4 align="center"> Search Book Details </h4>
+  <table align="center">
+    {{form.as_table}}
+    <tr>
+      <td colspan="2" align="center">
+      <input type="submit" class='btn btn-primary btn-lg'  name="Search" value="Search Book">
+      </td>     </tr>
+  </table>
+</form>
+{% endblock %}

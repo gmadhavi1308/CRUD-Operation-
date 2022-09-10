@@ -1,0 +1,16 @@
+{% extends 'books/base.html'%}
+{%block title %} UpdateBook {% endblock %}
+{%block body %}
+<form method ="post">
+  {% csrf_token %}
+<h4 align="center">Update Book Details</h4>
+<table align="center">
+  {{form.as_table}}
+  <tr>
+    <td colspan="2" align="center">
+    <input type="submit" class='btn btn-primary btn-lg'  name="update" value="Update Book">
+    </td>
+  </tr>
+</table>
+</form>
+{% endblock %}

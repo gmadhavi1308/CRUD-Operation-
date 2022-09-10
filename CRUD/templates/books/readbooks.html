@@ -1,0 +1,34 @@
+{% extends 'books/base.html'%}
+{% block title %} Books List {% endblock %}
+{% block body %}
+<div class="span12" align="center">
+<h3 class="muted" align="center">Books Details</h3>
+  {% if rows %}
+  <table border="1" align="center" class="primary" cellpadding="5">
+    <tr>
+      <th> Book id </th>
+      <th> Book Title </th>
+      <th> Author Name </th>
+      <th> Edition </th>
+      <th> Book Price </th>
+      <th> Actions </th>
+      </tr>
+      {% for book in rows %}
+      <tr>
+        <td> {{book.id}} </td>
+        <td> {{book.Title}} </td>
+        <td> {{book.Author}} </td>
+        <td> {{book.Edition}} </td>
+        <td> {{book.Price}} </td>
+        <td>
+          <a href="/books/updatebook/{{book.id}}" class='btn btn-warning'>Update</a>
+          <a href="/books/deletebook/{{book.id}}" class='btn btn-danger'>Delete</a>
+        </td>
+      </tr>
+      {% endfor %}
+      </table>
+    {% else %}
+    <h2> Books not found...</h2>
+    {% endif %}
+    </div>
+{% endblock %}
